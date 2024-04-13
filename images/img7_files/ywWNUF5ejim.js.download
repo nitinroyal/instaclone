@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("useIGDIsViewerAdmin",["MWPActor.react","ReQL","ReQLSuspense","useReStore"],(function(a,b,c,d,e,f,g){"use strict";var h;function a(a){var b=(h||(h=c("useReStore")))(),e=d("MWPActor.react").useActor(),g=d("ReQLSuspense").useFirst(function(){return d("ReQL").fromTableAscending(b.tables.participants,["isAdmin"]).getKeyRange(a,e)},[b,a,e],f.id+":24");if(g==null)return!1;g=g.isAdmin;return g!=null?g:!1}g["default"]=a}),98);
+__d("IGDDeleteOpenThread",["LSFactory","LSIntEnum","LSOptimisticRemoveThreadStoredProcedure","LSThreadRemoveType"],(function(a,b,c,d,e,f,g){"use strict";var h;function a(a,b){return a.runInTransaction(function(a){return c("LSOptimisticRemoveThreadStoredProcedure")(c("LSFactory")(a),{removeType:(h||(h=d("LSIntEnum"))).ofNumber(c("LSThreadRemoveType").DELETE_THREAD),threadKey:b})},"readwrite")}g.deleteOpenThread=a}),98);
